@@ -31,9 +31,7 @@ void loop() {
             if(flag[i] > count) {
                 switch(i){
                     case 0:
-                      Keyboard.press(KEY_LEFT_CTRL);
-                      Keyboard.write(KEY_PAGE_UP);
-                      Keyboard.release(KEY_LEFT_CTRL);
+                      //
                       break;
                     case 1:
                       Keyboard.press(KEY_LEFT_CTRL);
@@ -41,16 +39,28 @@ void loop() {
                       Keyboard.release(KEY_LEFT_CTRL);
                       break;
                     case 2:
-                      Keyboard.write(KEY_UP_ARROW);
+                      Keyboard.press(KEY_LEFT_CTRL);
+                      Keyboard.write(KEY_PAGE_UP);
+                      Keyboard.release(KEY_LEFT_CTRL);
                       break;
+
                     case 3:
                       Keyboard.write(KEY_DOWN_ARROW);
                       break;
                     case 4:
-                      Mouse.move(0, 0, 1);
+                      Keyboard.write(KEY_UP_ARROW);
                       break;
                     case 5:
-                      Mouse.move(0, 0, -1);
+                      //
+                      break;
+                    case 6:
+                      //Mouse.move(0, 0, -1);
+                      break;
+                    case 7:
+                      //Mouse.move(0, 0, 1);
+                      break;
+                    case 8:
+                      Mouse.click(MOUSE_MIDDLE)
                       break;
                 }
                 flag[i] = 0;
