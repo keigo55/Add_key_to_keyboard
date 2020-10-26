@@ -1,11 +1,10 @@
-
 #include "Keyboard.h"
 #include "Mouse.h"
 
 // キー数
-const int num = 6;
+const int num = 9;
 // ピン番号指定
-const int key[num] = {2, 3, 4, 5, 6, 7};
+const int key[num] = {2, 3, 4, 5, 6, 7, 8, 9, 10};
 // チャタリング防止用のカウンター
 int flag[num];
 // チャタリング防止用のカウント数
@@ -35,12 +34,12 @@ void loop() {
                       break;
                     case 1:
                       Keyboard.press(KEY_LEFT_CTRL);
-                      Keyboard.write(KEY_PAGE_DOWN);
+                      Keyboard.write(KEY_PAGE_UP);
                       Keyboard.release(KEY_LEFT_CTRL);
                       break;
                     case 2:
                       Keyboard.press(KEY_LEFT_CTRL);
-                      Keyboard.write(KEY_PAGE_UP);
+                      Keyboard.write(KEY_PAGE_DOWN);
                       Keyboard.release(KEY_LEFT_CTRL);
                       break;
 
@@ -53,14 +52,17 @@ void loop() {
                     case 5:
                       //
                       break;
-                    case 6:
+                    //case 6:
+                      //Serial.println("6");
                       //Mouse.move(0, 0, -1);
-                      break;
-                    case 7:
+                      //break;
+                    //case 7:
+                      //Serial.println("7");
                       //Mouse.move(0, 0, 1);
-                      break;
+                      //break;
                     case 8:
-                      Mouse.click(MOUSE_MIDDLE)
+                      Serial.println("8");
+                      Mouse.click(MOUSE_MIDDLE);
                       break;
                 }
                 flag[i] = 0;
